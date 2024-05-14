@@ -22,6 +22,10 @@ app.use ( express.json() )
 app.use('/api/events', require('./routes/events'))
 app.use('/api/auth', require('./routes/auth'));
 
+app.get('*',  (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
+
 // Escuchar servidor
 
 app.listen( process.env.PORT , () => {
