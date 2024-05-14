@@ -10,7 +10,7 @@ const getEventos = async( req, res = response ) => {
     
         return res.status(200).json({
             ok: true,
-            msg: eventos
+            eventos: eventos
         })
         
     } catch (error) {
@@ -30,7 +30,7 @@ const crearEvento = async( req, res = response ) => {
         const eventSaved = await evento.save();
         return res.status(200).json({
             ok: true,
-            msg: eventSaved
+            evento: eventSaved
         })
     } catch (error) {
         return res.status(500).json({
